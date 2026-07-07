@@ -45,3 +45,29 @@ def count_evens(numbers):
 print(count_evens([4, 7, 10, 3, 8]))        
 
 #6
+def max_number(numbers):
+    if len (numbers) == 1: 
+        return numbers[0]
+    else:
+        max_rest = max_number(numbers[1:])
+        return numbers[0] if numbers[0]> max_rest else max_rest
+print(max_number([4, 9, 2, 11, 6]))    
+
+
+#7
+def reverse_string(text):
+    if len(text) <=1:
+        return text
+    else:
+        return reverse_string(text[1:])+ text[0]
+print(reverse_string('python'))    
+#8
+def is_palindrome(text):
+    if len (text) <=1 : 
+        return True
+    elif text[0] == text [-1]:
+        return is_palindrome(text[1:-1])
+    else:
+        return False
+print(is_palindrome("level")) 
+print(is_palindrome("python"))
