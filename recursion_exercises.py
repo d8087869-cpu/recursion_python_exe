@@ -71,3 +71,28 @@ def is_palindrome(text):
         return False
 print(is_palindrome("level")) 
 print(is_palindrome("python"))
+
+#9
+def count_value(lst, value):
+    if lst == []:
+        return 0
+    else:
+        first = lst[0]
+        rest = lst[1:]
+        if first == value:
+            return 1 + count_value(rest, value)
+        else:
+            return count_value(rest, value)
+print(count_value([1, 2, 2, 3, 2], 2))
+
+#10
+#2=+1+0=0.1+1=2.2+1=3/3+2=5\.5+3=8==6
+def fibonacci(n):
+    if n == 0:
+        return 0
+    elif n == 1:
+        return 1
+    else:
+        return fibonacci(n - 1) + fibonacci(n - 2)
+print(fibonacci(0))
+print(fibonacci(6))
